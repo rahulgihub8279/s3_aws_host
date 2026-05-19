@@ -8,10 +8,10 @@ jobs:
     prod-check:
         runs-on: ubuntu-latest
         steps:
-            - name: run the first step
-              if: ${{github.ref == 'refs/heads/main'}}
-              run: echo "runing first step"
-            - name: run the second step 
-              run: echo "runing test"
+            - name: check for actor
+              if: ${{github.actor == 'rahulgihub8279'}}
+              run: echo "triggered by ${{github.actor}} & repo is ${{github.repository}}"
+            - name: default check 
+              run: echo "runing default"
 
 
