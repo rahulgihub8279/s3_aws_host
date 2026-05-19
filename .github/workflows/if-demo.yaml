@@ -1,0 +1,17 @@
+name: if-demo
+on:     
+    push:
+        branches: 
+            - main
+            - develop
+jobs:
+    prod-check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: run the first step
+              if: ${{github.ref == 'refs/heads/main'}}
+              run: echo "runing first step"
+            - name: run the second step 
+              run: echo "runing test"
+
+
