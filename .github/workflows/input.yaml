@@ -4,12 +4,23 @@ on:
         inputs:
             environment:
                 description: choose the env to deploy
-                required: true 
+                required: true
+                default: dev
+                type: choice
+                options:
+                    - test
+                    - deploy
+                    - build
+                    - prod
+            artifact_tag:     
+                description: choose the env to deploy
+                required: true
+
 
 jobs:
     input-demo:
         runs-on: ubuntu-latest
         steps:
             - name: delpoy app
-              run: echo "deploying the app to ${{inputs.environment}}"
-              
+              run: echo "deploying the ${{inputs.artifact_tag}} to ${{inputs.environment}}"
+
