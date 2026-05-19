@@ -1,1 +1,13 @@
-
+name: build & deploy
+on: 
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build step
+        run: echo "building the applications"
+        
